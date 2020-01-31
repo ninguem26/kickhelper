@@ -7,37 +7,118 @@
 
 <form action="{% url 'results' %}" method="post">
     {% csrf_token %}
-    <div class="form-group">
-      <label for="categoryInput">Categoria Principal</label>
-      <input type="text" name="mainCategory" class="form-control" id="categoryInput" aria-describedby="category" placeholder="Categoria principal do projeto">
+    <div class="form-group row">
+        <label for="mainCategoryInput" class="col-sm-2 form-control-label">Categoria Principal</label>
+        <div class="col-sm-10">
+            <select name="mainCategory" class="form-control selectpicker" data-live-search="true">
+                <option value="Art">Art</option>
+                <option value="Comics">Comics</option>
+                <option value="Crafts">Crafts</option>
+                <option value="Design">Design</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Film & Video">Film & Video</option>
+                <option value="Food">Food</option>
+                <option value="Games">Games</option>
+                <option value="Music">Music</option>
+                <option value="Photography">Photography</option>
+                <option value="Publishing">Publishing</option>
+                <option value="Technology">Technology</option>
+                <option value="Theater">Theater</option>
+            </select>
+        </div>
     </div>
-    <div class="form-group">
-      <label for="categoryInput">Categoria Específica</label>
-      <input type="text" name="category" class="form-control" id="categoryInput" aria-describedby="category" placeholder="Categoria específica do projeto">
+    <div class="form-group row">
+        <label for="categoryInput" class="col-sm-2 form-control-label">Categoria Específica</label>
+        <div class="col-sm-10">
+            <select name="category" class="form-control selectpicker" data-live-search="true">
+                <option value="Accessories">Accessories</option>
+                <option value="Animation">Animation</option>
+                <option value="Art">Art</option>
+                <option value="Art Books">Art Books</option>
+                <option value="Childrenswear">Childrenswear</option>
+                <option value="Comics">Comics</option>
+                <option value="Comic Books">Comic Books</option>
+                <option value="Crafts">Crafts</option>
+                <option value="Design">Design</option>
+                <option value="DIY">DIY</option>
+                <option value="Documentary">Documentary</option>
+                <option value="Drinks">Drinks</option>
+                <option value="Family">Family</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Film & Video">Film & Video</option>
+                <option value="Food">Food</option>
+                <option value="Food Trucks">Food Trucks</option>
+                <option value="Gadgets">Gadgets</option>
+                <option value="Games">Games</option>
+                <option value="Hardware">Hardware</option>
+                <option value="Illustration">Illustration</option>
+                <option value="Indie Rock">Indie Rock</option>
+                <option value="Jazz">Jazz</option>
+                <option value="Music">Music</option>
+                <option value="Narraqtive Film">Narrative Film</option>
+                <option value="Nonfiction">Nonfiction</option>
+                <option value="People">People</option>
+                <option value="Photography">Photography</option>
+                <option value="Poetry">Poetry</option>
+                <option value="Pop">Pop</option>
+                <option value="Product Design">Product Design</option>
+                <option value="Public Art">Public Art</option>
+                <option value="Restaurants">Restaurants</option>
+                <option value="Rock">Rock</option>
+                <option value="Tabletop Games">Tabletop Games</option>
+                <option value="Theater">Theater</option>
+                <option value="Software">Software</option>
+                <option value="Weaving">Weaving</option>
+                <option value="Web">Web</option>
+                <option value="Webseries">Webseries</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="countryInput" class="col-sm-2 form-control-label">País do projeto</label>
+        <div class="col-sm-10">
+            <select name="country" class="form-control selectpicker" data-live-search="true">
+                <option value="AU">Australia</option>
+                <option value="AT">Austria</option>
+                <option value="BR">Brazil</option>
+                <option value="CA">Canada</option>
+                <option value="FR">France</option>
+                <option value="DE">Germany</option>
+                <option value="GB">Great Britain</option>
+                <option value="IE">Ireland</option>
+                <option value="IT">Italy</option>
+                <option value="MX">Mexico</option>
+                <option value="NL">Netherlands</option>
+                <option value="NZ">New Zealand</option>
+                <option value="NO">Norway</option>
+                <option value="ES">Spain</option>
+                <option value="SE">Sweden</option>
+                <option value="CH">Switzerland</option>
+                <option value="US">United States</option>
+            </select>
+        </div>        
+    </div>
+    <div class="form-group row">
+        <label for="currencyInput" class="col-sm-2 form-control-label">Moeda corrente do projeto</label>
+        <div class="col-sm-10">
+            <select name="currency" class="form-control selectpicker" data-live-search="true">
+                <option value="USD">American Dollar</option>
+                <option value="AUD">Australian Dollar</option>
+                <option value="BRL">Brazilian Real</option>
+                <option value="GBP">British Pound</option>
+                <option value="CAD">Canadian Dollar</option>
+                <option value="EUR">Euro</option>
+                <option value="MXN">Mexican Peso</option>
+                <option value="NOK">Norwegian Krone</option>
+            </select>
+        </div>
     </div>
     <div class="form-group">
         <label for="goalInput">Valor a ser arrecadado</label>
         <input type="number" name="goal" class="form-control" id="goalInput">
     </div>
-    <div class="form-group">
-        <label for="countryInput">País do projeto</label>
-        <input type="text" name="country" class="form-control" id="countryInput">
-    </div>
-    <div class="form-group">
-        <label for="currencyInput">Moeda corrente do projeto</label>
-        <input type="text" name="currency" class="form-control" id="currencyInput">
-    </div>
-    <div class="form-group row">
-        <label for="" class="col-sm-2 form-control-label">Country</label>
-        <div class="col-sm-10">
-        <select class="form-control selectpicker" id="select-country" data-live-search="true">
-            <option data-tokens="china">China</option>
-            <option data-tokens="malayasia">Malayasia</option>
-            <option data-tokens="singapore">Singapore</option>
-        </select>
 
-        </div>
-    </div>
     <button type="submit" class="btn btn-primary">Analisar</button>
     
 </form>

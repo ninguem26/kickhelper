@@ -15,4 +15,4 @@ def results(request):
     currency = request.POST['currency']
     today = date.today()
 
-    return HttpResponse(today)
+    return HttpResponse(country)
