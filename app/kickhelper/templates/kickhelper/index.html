@@ -1,14 +1,14 @@
 {% include "kickhelper/header.html" %}
-
-<h1>Bem vindo ao KickHelper!</h1>
-<h5 class="text-muted">Preencha os campos abaixo e clique em <span style="color:green">analisar</span> para avaliar a qualidade da sua ideia!</h5>
+{% load static %}
+<h1>Welcome to <span style="font-family:'rns'; color:#05ce78">KickHelper</span></h1>
+<h5 class="text-muted">Fill in the fields below and click on <span style="color:#05ce78">analyze</span> to evaluate the quality of your idea!</h5>
 
 <hr/>
 
 <form action="{% url 'results' %}" method="post">
     {% csrf_token %}
     <div class="form-group row">
-        <label for="mainCategoryInput" class="col-sm-2 form-control-label">Categoria Principal</label>
+        <label for="mainCategoryInput" class="col-sm-2 form-control-label">Main Category</label>
         <div class="col-sm-10">
             <select name="mainCategory" class="form-control selectpicker" data-live-search="true">
                 <option value="Art">Art</option>
@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="form-group row">
-        <label for="categoryInput" class="col-sm-2 form-control-label">Categoria Específica</label>
+        <label for="categoryInput" class="col-sm-2 form-control-label">Secondary Category</label>
         <div class="col-sm-10">
             <select name="category" class="form-control selectpicker" data-live-search="true">
                 <option value="Accessories">Accessories</option>
@@ -76,7 +76,7 @@
         </div>
     </div>
     <div class="form-group row">
-        <label for="countryInput" class="col-sm-2 form-control-label">País do projeto</label>
+        <label for="countryInput" class="col-sm-2 form-control-label">Country</label>
         <div class="col-sm-10">
             <select name="country" class="form-control selectpicker" data-live-search="true">
                 <option value="AU">Australia</option>
@@ -100,7 +100,7 @@
         </div>        
     </div>
     <div class="form-group row">
-        <label for="currencyInput" class="col-sm-2 form-control-label">Moeda corrente do projeto</label>
+        <label for="currencyInput" class="col-sm-2 form-control-label">Currency</label>
         <div class="col-sm-10">
             <select name="currency" class="form-control selectpicker" data-live-search="true">
                 <option value="USD">American Dollar</option>
@@ -115,11 +115,11 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="goalInput">Valor a ser arrecadado</label>
-        <input type="number" name="goal" class="form-control" id="goalInput">
+        <label for="goalInput">Goal</label>
+        <input type="number" name="goal" class="form-control" id="goalInput" placeholder="Goal according to the selected currency">
     </div>
 
-    <button type="submit" class="btn btn-primary">Analisar</button>
+    <button type="submit" class="btn btn-primary">Analyze</button>
     
 </form>
 
