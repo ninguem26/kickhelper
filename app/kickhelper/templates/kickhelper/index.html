@@ -1,0 +1,45 @@
+{% include "kickhelper/header.html" %}
+
+<h1>Bem vindo ao KickHelper!</h1>
+<h5 class="text-muted">Preencha os campos abaixo e clique em <span style="color:green">analisar</span> para avaliar a qualidade da sua ideia!</h5>
+
+<hr/>
+
+<form action="{% url 'results' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="categoryInput">Categoria Principal</label>
+      <input type="text" name="mainCategory" class="form-control" id="categoryInput" aria-describedby="category" placeholder="Categoria principal do projeto">
+    </div>
+    <div class="form-group">
+      <label for="categoryInput">Categoria Específica</label>
+      <input type="text" name="category" class="form-control" id="categoryInput" aria-describedby="category" placeholder="Categoria específica do projeto">
+    </div>
+    <div class="form-group">
+        <label for="goalInput">Valor a ser arrecadado</label>
+        <input type="number" name="goal" class="form-control" id="goalInput">
+    </div>
+    <div class="form-group">
+        <label for="countryInput">País do projeto</label>
+        <input type="text" name="country" class="form-control" id="countryInput">
+    </div>
+    <div class="form-group">
+        <label for="currencyInput">Moeda corrente do projeto</label>
+        <input type="text" name="currency" class="form-control" id="currencyInput">
+    </div>
+    <div class="form-group row">
+        <label for="" class="col-sm-2 form-control-label">Country</label>
+        <div class="col-sm-10">
+        <select class="form-control selectpicker" id="select-country" data-live-search="true">
+            <option data-tokens="china">China</option>
+            <option data-tokens="malayasia">Malayasia</option>
+            <option data-tokens="singapore">Singapore</option>
+        </select>
+
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Analisar</button>
+    
+</form>
+
+{% include "kickhelper/footer.html" %}
