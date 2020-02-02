@@ -1,9 +1,13 @@
+import os
 import numpy as np
 from xgboost import XGBClassifier
 from joblib import load
 
-MODEL_PATH = '/home/lativ/Study/ML/datascience/kickhelper/app/kickhelper/ml/xgb-150k-v1.model'
-ENCODER_PATH = '/home/lativ/Study/ML/datascience/kickhelper/app/kickhelper/ml/onehot-150k.joblib'
+#MODEL_PATH = '/home/lativ/Study/ML/datascience/kickhelper/app/kickhelper/ml/xgb-150k-v1.model'
+#ENCODER_PATH = '/home/lativ/Study/ML/datascience/kickhelper/app/kickhelper/ml/onehot-150k.joblib'
+dir_path = os.path.dirname(os.path.realpath(__file__))
+MODEL_PATH = os.path.join(dir_path, 'xgb-150k-v1.model')
+ENCODER_PATH = os.path.join(dir_path, 'onehot-150k.joblib')
 
 def predict(inputs):
 
