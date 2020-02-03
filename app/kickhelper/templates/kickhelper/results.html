@@ -1,0 +1,44 @@
+{% include "kickhelper/header.html" %}
+{% load static %}
+<h1>Results</h1>
+<h5 class="text-muted">Based on the input data</h5>
+
+<hr/>
+
+<h3>This is an idea with a <span style="font-size: 50px; font-family:'rns'; color:{{ color }}">{{ success }}%</span> chance of working</h3>
+
+<h5 class="text-muted">{{ message }}</h5>
+
+<div class="card-deck" style="margin-top: 20px">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Main Category</h5>
+            <h4 class="text-muted">{{ mainCategory }}</h4>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Secondary Category</h5>
+            <h4 class="text-muted">{{ category }}</h4>
+        </div>
+    </div>
+</div>
+
+<div class="card-deck" style="margin-top: 20px; margin-bottom: 20px">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Country</h5>
+            <h4 class="text-muted">{{ country }}</h4>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Goal (Currency)</h5>
+            <h4 class="text-muted">{{goal}},00 ({{ currency }})</h4>
+        </div>
+    </div>
+</div>
+
+<a class="btn btn-primary" href="/kickhelper" role="button">New Analysis</a>
+
+{% include "kickhelper/footer.html" %}
